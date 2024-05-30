@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: back_ts_api_db
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: backts
+      POSTGRES_PASSWORD: backts
+      POSTGRES_DB: backts
+    ports:
+      - "5432:5432"
+    networks:
+      - backts
+    restart: always
+
+networks:
+  backts:
+    driver: bridge
